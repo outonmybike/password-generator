@@ -187,7 +187,6 @@ var generatePassword = function() {
 	constructArray();
 	selectChars();
 	passwordProbability();
-	console.log(probNumberString);
 	alert('NERD NOTE: The probability of randomly guessing the password we have generated is 1 in '+probNumberString)
 	return passWordString
 };
