@@ -142,22 +142,22 @@ var getCrit = function() {
 	var critCount=0
 	criteria.reset();
 	alert('Next you will decide which of the 4 characters types to include in your password\r\n(You must select at least 1)');
-	criteria.lower = confirm('Click "OK" to include at least one LOWER CASE character in your password');
+	criteria.lower = confirm('Click "OK" to include LOWER CASE CHARACTERS in your password');
 	if (criteria.lower){
 		critCount+=1;
 		criteria.lowerText = 'LOWER CASE\r\n'
 	}
-	criteria.upper = confirm('Click "OK" to include at least one UPPER CASE character in your password');
+	criteria.upper = confirm('Click "OK" to include UPPER CASE CHARACTERS in your password');
 	if (criteria.upper){
 		critCount+=1;
 		criteria.upperText = 'UPPER CASE\r\n'
 	}
-	criteria.number = confirm('Click "OK" to include at least one NUMBER in your password');
+	criteria.number = confirm('Click "OK" to include NUMBERS in your password');
 	if (criteria.number){
 		critCount+=1;
 		criteria.numberText = 'NUMBER\r\n'
 	}
-	criteria.special = confirm('Click "OK" to include at least one SPECIAL CHARACTER in your password');
+	criteria.special = confirm('Click "OK" to include SPECIAL CHARACTERS in your password');
 	if (criteria.special){
 		critCount+=1;
 		criteria.specialText = 'SPECIAL CHARACTER\r\n'
@@ -206,9 +206,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
 
