@@ -1,5 +1,4 @@
 // Assignment code here
-// debugger;
 var criteria = {
 	size: 0,
 	lower: false,
@@ -62,13 +61,9 @@ var passwordProbability = function() {
 	for(var i = 0; i < (criteria.size-probLength); i++) {
 		probability = probability.concat(selectionArray.length)
 	}
-	console.log(probability)
 	probNumber = multiply(probability)
-	console.log(probNumber)
 	probNumberString = probNumber.toLocaleString();
-	console.log(probNumberString)
 }
-
 
 
 var constructArray = function() {
@@ -107,25 +102,21 @@ var selectChars = function() {
 		else {
 			criteriaSatisfied+=1
 		}
-		console.log(criteriaSatisfied)
 		if(criteria.upper && !foundUpper) {
 		}
 		else {
 			criteriaSatisfied+=1
 		}
-		console.log(criteriaSatisfied)
 		if(criteria.Number && !foundNumber) {
 		}
 		else {
 			criteriaSatisfied+=1
 		}	
-		console.log(criteriaSatisfied)
 		if(criteria.Special && !foundSpecial) {
 		}
 		else {
 			criteriaSatisfied+=1
 		}	
-		console.log(criteriaSatisfied)
 	}
 	passWordString = passWordArray.join('');
 	return passWordString;
@@ -133,7 +124,6 @@ var selectChars = function() {
 
 
 var getLength = function() { 
-	// debugger;
 	pwLength = prompt('Enter a length between 8 and 128 for your new password');
 	if(!parseInt(pwLength)) {
 		alert('Please enter a numerical value');
@@ -150,9 +140,7 @@ var getLength = function() {
 
 var getCrit = function() {
 	var critCount=0
-	console.log(criteria);
 	criteria.reset();
-	console.log(criteria);
 	alert('Next you will decide which of the 4 characters types to include in your password\r\n(You must select at least 1)');
 	criteria.lower = confirm('Click "OK" to include at least one LOWER CASE character in your password');
 	if (criteria.lower){
@@ -185,29 +173,23 @@ var getCrit = function() {
 	else {
 		var theS =''
 	}
-	// debugger;
-	console.log('pre');
 	var validateCrit = confirm('You have chosen to include the following character type'+theS+': \r\n'+criteria.lowerText+criteria.upperText+criteria.numberText+criteria.specialText+'Click OK to confirm or CANCEL to reselct');
-	console.log('post');
 	if(!validateCrit) {
 		getCrit();
 		return;
 	}
-
 	return 
 };
-
 
 var generatePassword = function() {
 	getLength();
 	getCrit();
 	constructArray();
-	console.log(selectionArray);
 	selectChars();
-	console.log(passWordArray);
 	passwordProbability();
+	console.log(probNumberString);
+	alert('NERD NOTE: The probability of randomly guessing the password we have generated is 1 in '+probNumberString)
 	return passWordString
-
 };
 
 // Get references to the #generate element
@@ -224,3 +206,9 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
